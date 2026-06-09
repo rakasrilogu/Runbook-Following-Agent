@@ -402,6 +402,26 @@ function App() {
           addAgentLog(`ALERT: Step ${data.step.step_number} execution BLOCKED. Operator approval signature required.`, 'warning');
           triggerToast('Action blocked: Risky command detected.', 'error');
         }
+      } else if (data.status === 'RECOVERING') {
+        const step = data.step;
+        setConsoleLogs(prev => [
+          ...prev,
+          { type: 'system', text: `[SYSTEM] Automated Step ${step.step_number}: ${step.description}` },
+          { type: 'input', text: step.command },
+          { type: 'error', text: `[FAILURE DETECTED] Fetching correct command via MCP...` }
+        ]);
+        addAgentLog(`Step ${step.step_number} failed. MCP auto-recovery protocol initiated.`, 'danger');
+        
+      } else if (data.status === 'RECOVERED') {
+        const step = data.step;
+        setConsoleLogs(prev => [
+          ...prev,
+          { type: 'system', text: `[MCP RECOVERY] Command successfully swapped!` },
+          { type: 'input', text: step.command },
+          { type: 'output', text: step.output || 'Recovered.' }
+        ]);
+        addAgentLog(`Step ${step.step_number} successfully auto-recovered via MCP.`, 'check');
+        
       } else if (data.status === 'RUNNING') {
         const step = data.step;
         const logLines = [];
