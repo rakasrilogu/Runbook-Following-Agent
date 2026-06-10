@@ -260,3 +260,5 @@ infinite project/
 - HIGH risk commands (destructive operations such as rm -rf, DROP TABLE, shutdown) are never auto-executed.
 - The SECRET_KEY in config.py should be replaced with a strong random value before any non-local deployment.
 - This project is designed for trusted internal/operator use. Do not expose the Flask API to untrusted networks without adding authentication.
+
+---
