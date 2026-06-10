@@ -1,6 +1,15 @@
 # VEGA — Runbook Automation & Execution Agent
+VEGA Defines
 
-> AI-powered runbook execution engine with risk classification, human-in-the-loop approval, and automatic error remediation.
+V - Verify
+
+E - Execute
+
+G - Guide
+
+A - Audit
+
+AI-powered runbook execution engine with risk classification, human-in-the-loop approval, and automatic error remediation.
 
 ---
 
