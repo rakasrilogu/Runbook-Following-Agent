@@ -13,6 +13,8 @@ AI-powered runbook execution engine with risk classification, human-in-the-loop 
 
 ---
 
+DEPLOYMENT LINK : vegainfi.netlify.app
+
 ## Overview
 
 VEGA is a full-stack DevOps automation platform that parses, classifies, and executes IT runbooks step by step. It combines a Python/Flask backend with a React frontend to give operators a supervised, auditable pipeline for running operational procedures — with AI-assisted command classification, multi-step approval flows, and built-in error recovery.
